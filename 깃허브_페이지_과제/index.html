@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Open+Sans&display=swap" rel="stylesheet">
     <title>Github</title>
     <style>
         body{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
         }
         #wrap{
             text-align: center;
@@ -72,6 +76,8 @@
         }
         #search-input::placeholder{
             color: rgba(255,255,255,0.5);
+            position: relative;
+            top: -22px;
         }
         #search-input:focus::placeholder {
             color: transparent;
@@ -92,13 +98,82 @@
         #sign-up:hover{
             cursor: pointer; 
         }
+        #container-text{
+            display: inline-block;
+            text-align: left;
+            position: absolute;
+            top: 200px;
+            left: 250px;
+            height: 300px;
+            width: 480px;
+            line-height: 15px;
+            
+        }
+        .header{
+            color: white;
+            font-size: 55px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        .description{
+            color: gray;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        .underline {
+            text-decoration: underline;
+            color: white;
+        }
+        #container-form {
+            display: inline-block;
+            text-align: left;
+            position: relative;
+            top: 80px;
+            left: 250px;
+            height: 530px;
+            width: 390px;background-color: white;
+            border-radius: 1%;
+        }
+        #container-form > form{
+            border-radius: 3px;
+            padding-top: 25px;
+            padding-left: 25px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        p{
+            font-size: 10px;
+            line-height: 2px;
+        }
+        #submit{
+            background-color: green;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        input{
+            width: 330px;
+            height: 45px;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+        .bluelink{
+            color: blue;
+            text-decoration: none;
+        }
+        .bluelink:visited{
+            color: blue;
+        }
     </style>
 </head>
 <body>
     <div id="wrap">
         <div id="nav">
             <div id="logo"></div>
-            <div class="nav"></div>
+            <div id="nav"></div>
             <a href="#">Why GitHub?</a>
             <a href="#">Team</a>
             <a href="#">Enterprise</a>
@@ -113,6 +188,42 @@
             </div>
             <a href="#">Sign in</a>
             <button id="sign-up">Sign up</button>
+        </div>
+        <div id="container-text">
+            <p class="header">Built for</p>
+            <p class="header">developers</p>
+            <p class="description">GitHub is a development platform inspired by the</p>
+            <p class="description">way you work. From <a href="#" class="underline">open source</a> to <a href="#" class="underline">business</a>, you</p>
+            <p class="description">can host and review code, manage projects, and</p>
+            <p class="description">build software alongside 50 million developers.</p>
+        </div>
+        <div id="container-form">
+            <form action="#">
+                <div class="form-group">
+                    <label class="label">Username</label><br>
+                    <input type="text" id="text"><br>
+                </div>
+                <div class="form-group">
+                    <label class="label">Email</label><br>
+                    <input type="email" id="email"><br>
+                </div>
+                <div class="form-group">
+                    <label class="label">Password</label><br>
+                    <input type="password" id="password"><br>
+                </div>
+                <div class="form-group">
+                    <p>Make sure it's at least 15 characters OR at least 8 characters including a</p>
+                    <p>number and a lowercase letter.<a href="#" class="bluelink">Learn more</a></p>
+                </div>
+                    <div class="form-group">
+                    <input type="submit" id="submit" value="Sign up for GitHub">
+                </div>
+                <div class="form-group"></div>
+                    <p>By clicking "Sign up for GitHub", you agree to our <a href="#" class="bluelink">Term of Servies</a> and</p>
+                    <p><a href="#" class="bluelink">Privacy Statement</a>. We'll occasionally send you account related emails.</p>
+                </div>
+            </form>
+        </div>
         </div>
     </div>
 </body>
