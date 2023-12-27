@@ -3,9 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Github</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap{
+            text-align: center;
+            width: 1500px;
+            height: 688px;
+            background-color: black;
+        }
+        #nav{
+            display: flex;
+            text-align: left;
+            position: absolute;
+            top: 15px;
+            left: 120px;
+            height: 43px;
+            width: 1300px;
+            padding: 10px;
+            font-size: 17px;
+        }
+        #logo{
+            background-image: url(./github-mark-white.png);
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-size: 50px 50px;
+            background-repeat: no-repeat;
+            background-color: black;
+            display: inline-block;
+            
+        }
+        #nav a{
+            position: relative;
+            top:10px;
+            display: inline-block;
+            margin-left: 16px;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        #nav a:visited{
+            color: white;
+        }
+        #search > form{
+            display: inline-flex;
+            width: 225px;
+            height: 30px;
+            border: none;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            text-align: left;
+            margin-left: 250px;
+            margin-top: 10px;
+        }
+        #search-input{
+            width: 225px;
+            padding: 16px 12px;
+            font-size: 15px;
+            line-height: 24px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+        #search-input::placeholder{
+            color: rgba(255,255,255,0.5);
+        }
+        #search-input:focus::placeholder {
+            color: transparent;
+        }
+        #sign-up{
+            margin-top: 8px;
+            border: 1px solid white;
+            height: 30px;
+            border-radius: 5px;
+            background-color:transparent;
+            color: white;
+            text-decoration: none;
+            margin-left: 16px;
+            font-weight: bold;
+            font-size: 17px;
+            
+        }
+        #sign-up:hover{
+            cursor: pointer; 
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="wrap">
+        <div id="nav">
+            <div id="logo"></div>
+            <div class="nav"></div>
+            <a href="#">Why GitHub?</a>
+            <a href="#">Team</a>
+            <a href="#">Enterprise</a>
+            <a href="#">Explore</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Pricing</a>
+            <div id="search">
+                <form action="">
+                    <label for="search-input"></label>
+                    <input id="search-input" type="text" placeholder="SearchGitHub">
+                </form>
+            </div>
+            <a href="#">Sign in</a>
+            <button id="sign-up">Sign up</button>
+        </div>
+    </div>
 </body>
 </html>
