@@ -50,6 +50,7 @@
             text-decoration: none;
             font-weight: bold;
             white-space: nowrap;
+            
         }
         #nav a:visited{
             color: white;
@@ -128,7 +129,7 @@
             letter-spacing: 1px;
         }
         .underline {
-            text-decoration: underline;
+            text-decoration: none;
             color: white;
         }
         #container-form {
@@ -151,7 +152,7 @@
         }
         p{
             font-size: 10px;
-            line-height: 2px;
+            line-height: 4px;
         }
         #submit{
             background-color: green;
@@ -190,6 +191,12 @@
             width: 430px; 
             height: auto; 
         }
+        svg {
+            fill: gray; 
+            width: 14px;
+            height: 16px; 
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
@@ -197,16 +204,22 @@
         <div id="nav">
             <div id="logo"></div>
             
-            <a href="#">Why GitHub?</a>
-            <a href="#">Team</a>
+            <a href="#">Why GitHub?
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+            </a>
+                <a href="#">Team</a>
             <a href="#">Enterprise</a>
-            <a href="#">Explore</a>
+            <a href="#">Explore 
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+            </a>
             <a href="#">Marketplace</a>
-            <a href="#">Pricing</a>
+            <a href="#">Pricing
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+            </a>
             <div id="search">
                 <form action="">
                     <label for="search-input"></label>
-                    <input id="search-input" type="text" placeholder="SearchGitHub">
+                    <input id="search-input" type="text" placeholder="Search GitHub">
                 </form>
             </div>
             <a href="#">Sign in</a>
