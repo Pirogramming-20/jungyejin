@@ -369,6 +369,114 @@
         #nav li:nth-of-type(8) a span{
             margin-top: 3px;
         }
+        #main{
+            margin-top: 51px;
+            display: flex;
+        }
+        #main-left{
+            width: 830px;
+            margin-right: 30px;
+        }
+        #main-right{
+            width: 420px;
+        }
+        #main-left-ad, #main-right-ad{
+            background: gray;
+        }
+        aside[id$=ad]{
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        #main-left-ad{
+            height: 130px;
+            margin-bottom: 16px;
+        }
+        section[id^=main]{
+            box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        
+        #main-shopping{
+            height: 560px;
+        }
+        #main-login{
+            height: 164px;
+            padding: 21px 20px 18px;
+            font-size: 1.4rem;
+            display: flex;
+            flex-flow: column;
+        }
+        #main-login > div:first-of-type{
+            line-height: 20px;
+        }
+        #main-login-button{
+            margin-top: 13px;
+            padding: 17px 0;
+            border: 1px solid rgba(0,0,0,.06);
+            height: 56px;
+            border-radius: 4px;
+            background-color: #03c75a;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 16px;
+        }
+        #main-login-button i{
+            vertical-align: -1px;
+            background-image: url(./sp_main.png);
+            background-size: 433px 412px;
+            background-position: -120px -166px;
+            background-repeat: no-repeat;
+            width: 72px;
+            height: 14px;
+            display: inline-block;
+            margin: 3px 8px 0 0;
+        }
+        #main-login > div:last-of-type{
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+        }
+        #main-login > div:last-of-type a{
+            text-decoration: none;
+            color: var(--color_caption2);
+            letter-spacing: -0.4px;
+        }
+        #main-login > div:last-of-type a:first-of-type, #main-login > div:last-of-type a:last-of-type{
+            position: relative;
+            top: 5px;
+        }
+        #main-login > div:last-of-type a:hover{
+            text-decoration: underline;
+        }
+        #main-login > div:last-of-type > a:nth-of-type(2)::before, #main-login > div:last-of-type > a:nth-of-type(2)::after{
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            background-color: #d3d5d7;
+            background-color: var(--color_dot_divider);
+            margin: 4px 12px 0;
+        }
+        #main-right-ad{
+            height: 240px;
+        }
+        .main-weather-and-stock{
+            padding: 0 18px;
+        }
+        .main-weather-and-stock > header {
+            height: 52px;
+            padding: 6px 0;
+        }
+        .main-weather-and-stock > div{
+            border-top: 1px solid var(--color_border_in);
+        }
+        #main-weather{
+            height: 236px;
+        }
+        #main-stock{
+            height: 236px;
+        }
     </style>
 </head>
 <body>
@@ -473,121 +581,99 @@
                 </ul>
             </nav>
             <style>
-                #main{
-                    margin-top: 51px;
-                    display: flex;
-                }
-                #main-left{
-                    width: 830px;
-                    margin-right: 30px;
-                }
-                #main-right{
-                    width: 420px;
-                }
-                #main-left-ad, #main-right-ad{
-                    background: gray;
-                }
-                aside[id$=ad]{
-                    border-radius: 8px;
-                    margin-bottom: 16px;
-                }
-                #main-left-ad{
-                    height: 130px;
-                    margin-bottom: 16px;
-                }
-                section[id^=main]{
-                    box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
-                    border-radius: 8px;
-                    margin-bottom: 16px;
-                }
-                #main-newstand{
-                    height: 426px;
-                }
-                #main-shopping{
-                    height: 560px;
-                }
-                #main-login{
-                    height: 164px;
-                    padding: 21px 20px 18px;
-                    font-size: 1.4rem;
-                    display: flex;
-                    flex-flow: column;
-                }
-                #main-login > div:first-of-type{
-                    line-height: 20px;
-                }
-                #main-login-button{
-                    margin-top: 13px;
-                    padding: 17px 0;
-                    border: 1px solid rgba(0,0,0,.06);
-                    height: 56px;
-                    border-radius: 4px;
-                    background-color: #03c75a;
-                    color: white;
-                    text-decoration: none;
-                    margin-bottom: 16px;
-                }
-                #main-login-button i{
-                    vertical-align: -1px;
-                    background-image: url(./sp_main.png);
-                    background-size: 433px 412px;
-                    background-position: -120px -166px;
-                    background-repeat: no-repeat;
-                    width: 72px;
-                    height: 14px;
-                    display: inline-block;
-                    margin: 3px 8px 0 0;
-                }
-                #main-login > div:last-of-type{
-                    font-size: 1.3rem;
-                    display: flex;
-                    justify-content: center;
-                }
-                #main-login > div:last-of-type a{
-                    text-decoration: none;
-                    color: var(--color_caption2);
-                    letter-spacing: -0.4px;
-                }
-                #main-login > div:last-of-type a:first-of-type, #main-login > div:last-of-type a:last-of-type {
-                    position: relative;
-                    top: 5px;
-                }
-                #main-login > div:last-of-type a:hover{
-                    text-decoration: underline;
-                }
-                #main-login > div:last-of-type > a:nth-of-type(2)::before, #main-login > div:last-of-type > a:nth-of-type(2)::after{
-                    content: '';
-                    display: inline-block;
-                    width: 1px;
-                    height: 12px;
-                    background-color: #d3d5d7;
-                    background-color: var(--color_dot_divider);
-                    margin: 4px 12px 0;
-                }
-                #main-right-ad{
-                    height: 240px;
-                }
-                .main-weather-and-stock{
-                    padding: 0 18px;
-                }
-                .main-weather-and-stock > header {
-                    height: 52px;
-                    padding: 6px 0;
-                }
-                .main-weather-and-stock > div{
-                    border-top: 1px solid var(--color_border_in);
-                }
-                #main-weather{
-                    height: 236px;
-                }
-                #main-stock{
-                    height: 236px;
-                }
+            #main-newstand{
+                height: 426px;
+                display: flex;
+                flex-flow: column;
+            }
+            #main-newstand-top{
+                flex:1;
+                padding: 18px 20px;
+            }
+            #main-newstand header{
+                font-size: 1.6rem;
+                color: rgba(8, 8, 8,.5);
+                display: flex;
+                justify-content: flex-start;
+            }
+            #main-newstand header .bold{
+                font-weight: bold;
+                color: black;
+            }
+            #main-newstand-gray{
+                display: flex;
+                justify-content: flex-start;
+            }
+            #main-newstand a{
+                text-decoration: none;
+            }
+            #main-newstand a:visited{
+                color: inherit;
+            }
+            #main-newstand a:hover{
+                text-decoration: underline;
+            }
+            #main-newstand footer{
+                border-top: 1px solid var(--color_border_in);
+                padding: 10px 0 11px;
+            }
             </style>
             <main id="main">
                 <div id="main-left">
                     <aside id="main-left-ad"></aside>
-                    <section id="main-newstand"></section>
+                    <section id="main-newstand">
+                        <div id="main-newstand-top">
+                            <header>
+                                <a href="#" class="bold">뉴스스탠드</a>
+                                <a href="#">언론사편집</a>
+                                <a href="#">엔터</a>
+                                <a href="#">스포츠</a>
+                                <a href="#">경제</a>
+                            </header>
+                            <div id="main-newstand-gray">
+                                <a href="#">전체언론사</a>
+                                <a href="#">연합뉴스</a>
+                                <a href="#">정예진 밤 새 정예진 밤 새 정예진 밤 새 정예진 밤 새 정예진 밤 새 </a>
+                            </div>
+                            <div>
+                                <a href="#">뉴스스탠드</a>
+                                <a href="#">뉴스홈</a>
+                            </div>
+                            <div id="main-newstand-grid">
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                            </div>
+                        </div>
+                        <footer>
+                            <button><span class="blind">이전</span></button>
+                            <div>언론사 더보기1페이지전체4</div>
+                            <button><span class="blind">다음</span></button>
+                            <button><span class="blind">목록보기</span></button>
+                            <button><span class="blind">격자보기</span></button>
+                        </footer>
+                    </section>
                     <section id="main-shopping"></section>
                 </div>
                 <div id="main-right">
