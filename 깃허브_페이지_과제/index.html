@@ -54,6 +54,9 @@
         #nav a:visited{
             color: white;
         }
+        #search{
+            z-index: 2;
+        }
         #search > form{
             display: inline-flex;
             width: 225px;
@@ -64,20 +67,23 @@
             text-align: left;
             margin-left: 250px;
             margin-top: 10px;
+            
         }
         #search-input{
+            position: relative;
+            top: -6px;
             width: 225px;
-            padding: 16px 12px;
+            padding: 0px 10px;
             font-size: 15px;
             line-height: 24px;
             border: none;
             outline: none;
             background-color: transparent;
+            color: white;
         }
         #search-input::placeholder{
             color: rgba(255,255,255,0.5);
             position: relative;
-            top: -22px;
         }
         #search-input:focus::placeholder {
             color: transparent;
@@ -149,10 +155,15 @@
         }
         #submit{
             background-color: green;
+            width: 330px;
+            height: 45px;
             border: none;
             color: white;
             font-weight: bold;
             border-radius: 5px;
+        }
+        #submit:hover{
+            cursor: pointer; 
         }
         input{
             width: 330px;
@@ -173,7 +184,7 @@
     <div id="wrap">
         <div id="nav">
             <div id="logo"></div>
-            <div id="nav"></div>
+            
             <a href="#">Why GitHub?</a>
             <a href="#">Team</a>
             <a href="#">Enterprise</a>
@@ -216,7 +227,7 @@
                     <p>number and a lowercase letter.<a href="#" class="bluelink">Learn more</a></p>
                 </div>
                     <div class="form-group">
-                    <input type="submit" id="submit" value="Sign up for GitHub">
+                    <button type="submit" id="submit" value="Sign up for GitHub">Sign up for GitHub</button>
                 </div>
                 <div class="form-group"></div>
                     <p>By clicking "Sign up for GitHub", you agree to our <a href="#" class="bluelink">Term of Servies</a> and</p>
