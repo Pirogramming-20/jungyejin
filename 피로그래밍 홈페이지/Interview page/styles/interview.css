@@ -6,10 +6,20 @@
 }
 #card-area{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--gutter);
     width: min(100%, 1200px);
     margin: auto;
+}
+@media screen and (max-width: 600px) {
+    #card-area{
+    grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (max-width: 850px) {
+    #card-area{
+    grid-template-columns: repeat(2, 1fr);
+    }
 }
 .interview-card{
     margin-bottom: var(--gutter);
