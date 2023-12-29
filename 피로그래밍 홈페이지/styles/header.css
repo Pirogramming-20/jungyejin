@@ -19,6 +19,7 @@ header {
 .desktop-menu {
   display: flex;
   font-size: 1.8rem;
+  font-weight: bold;
   gap: var(--gutter);
 }
 .desktop-menu > li:hover {

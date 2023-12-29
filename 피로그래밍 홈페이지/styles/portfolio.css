@@ -1,0 +1,25 @@
+@media screen and (max-width: 768px){
+    #portfolio {
+        padding: 90px var(--gutter) 50px;
+    }
+}
+
+#portfolio{
+    background-color: aliceblue;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gutter);
+    padding: 0 var(--offset);
+    
+    width: min(100%, 1200px);
+    margin: auto;
+}
+
+#protfolio-header{
+    background-color: aqua;
+    width: 100%;
+    height: 40px;
+    
+}
