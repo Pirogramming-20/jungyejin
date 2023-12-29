@@ -5,27 +5,23 @@
 }
 }
 #card-area{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content:flex-start;
-    width: min(100%, 1200px);
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--gutter);
+    width: min(100%, 1200px);
     margin: auto;
 }
 .interview-card{
+    margin-bottom: var(--gutter);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative; 
     padding: var(--gutter);
     gap: var(--gutter);
-    width: min(80%, 260px);
     background-color: var(--bg-gray);
     border-radius: 10px;
-
-    min(80%, 260px)
 }
 .interview-card:hover{
     top: -2px;
