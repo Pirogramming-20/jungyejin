@@ -15,10 +15,10 @@
     transition: 0.3s;
 }
 
-.interview-containter:hover #interview-hamburger > div:nth-child(1){
+.interview-card:hover #interview-hamburger > div:nth-child(1){
     transform: scaleX(0.5) translate(7px, 0);
 }
 
-.interview-containter:hover #interview-hamburger > div:nth-child(3){
+.interview-card:hover #interview-hamburger > div:nth-child(3){
     transform: scaleX(0.5) translate(-7px, 0);
 }
