@@ -25,7 +25,7 @@ header {
 .desktop-menu > li:hover {
   color: var(--green);
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .desktop-menu {
     display: none;
   }

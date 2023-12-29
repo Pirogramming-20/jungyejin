@@ -27,7 +27,7 @@
   transform: rotate(45deg) translate(1px, -10px);
   transform-origin: bottom;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   #hamburger-icon {
     display: flex;
   }

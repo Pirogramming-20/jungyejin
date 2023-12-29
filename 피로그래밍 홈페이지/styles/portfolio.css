@@ -1,8 +1,8 @@
-@media screen and (max-width: 768px){
+/* @media screen and (max-width: 650px){
     #portfolio {
         padding: 90px var(--gutter) 50px;
     }
-}
+} */
 
 #portfolio{
     background-color: black;
@@ -12,9 +12,9 @@
     align-items: center;
     gap: var(--gutter);
     padding: 0 var(--offset);
-    
     width: min(100%, 1200px);
     margin: auto;
+    margin-bottom: 100px;
 }
 
 #portfolio-header{
