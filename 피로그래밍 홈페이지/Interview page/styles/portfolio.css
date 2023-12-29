@@ -4,7 +4,7 @@
     }
 } */
 
-#portfolio{
+#interview{
     background-color: black;
     justify-content: space-around;
     display: flex;
@@ -17,7 +17,7 @@
     margin-bottom: 100px;
 }
 
-#portfolio-header{
+#interview-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,7 +27,7 @@
     margin-bottom: var(--gutter);
 }
 
-#portfolio-header > div:nth-of-type(2){
+#interview-header > div:nth-of-type(2){
     font-size: 2.2rem;
 }
 

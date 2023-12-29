@@ -1,0 +1,87 @@
+
+@media screen and (max-width: 800px) {
+.desktop-menu {
+    display: none;
+}
+}
+#card-area{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:flex-start;
+    width: min(100%, 1200px);
+    gap: var(--gutter);
+    margin: auto;
+}
+.interview-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; 
+    padding: var(--gutter);
+    gap: var(--gutter);
+    width: min(80%, 260px);
+    background-color: var(--bg-gray);
+    border-radius: 10px;
+
+    min(80%, 260px)
+}
+.interview-card:hover{
+    top: -2px;
+}
+
+.interview-card:hover img {
+    width: min(80%, 260px)
+}
+
+#interview-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+#interview-image{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#interview-content{
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    gap: 20px
+}
+
+#interview-name{
+    font-size: 1.8rem;
+}
+#interview-detail{
+    line-height: 2rem;
+    font-size: 1.6rem;
+    color: #c6c6c6;;
+}
+
+#people-name{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#people-name > div{
+    background-color:var(--bg-brightgray);
+    padding: 6px 8px;
+    color: black;
+    font-size: 1.4rem;
+    border-radius: 5px;
+}
+
+img{
+    width: 70px;
+}
+
