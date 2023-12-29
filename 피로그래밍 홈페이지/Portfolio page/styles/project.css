@@ -20,7 +20,8 @@
 }
 
 .project-containter:hover img {
-    width: min(80%, 260px)
+    transform: scale(1.1);
+    transition: transform 0.3s
 }
 
 #project-description{
