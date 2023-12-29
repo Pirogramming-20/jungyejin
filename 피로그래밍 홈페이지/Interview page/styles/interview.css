@@ -22,8 +22,6 @@
     }
 }
 .interview-card{
-    margin-bottom: var(--gutter);
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
