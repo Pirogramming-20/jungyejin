@@ -85,7 +85,7 @@ img{
         width: min(75%, 250px);
         height: 160px;
     }
-    #projcect-description{
+    #project-description{
         align-items: center;
         gap: 10px;
     }
