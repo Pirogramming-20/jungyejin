@@ -23,7 +23,7 @@
     width: min(80%, 260px)
 }
 
-#projcect-description{
+#project-description{
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -22,6 +22,10 @@ header {
   font-weight: bold;
   gap: var(--gutter);
 }
+
+.desktop-menu > li:nth-of-type(3){
+  color: var(--green);
+}
 .desktop-menu > li:hover {
   color: var(--green);
 }
