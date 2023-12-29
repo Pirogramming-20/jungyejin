@@ -1,0 +1,37 @@
+/* @media screen and (max-width: 650px){
+    #portfolio {
+        padding: 90px var(--gutter) 50px;
+    }
+} */
+
+#portfolio{
+    background-color: black;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gutter);
+    padding: 0 var(--offset);
+    width: min(100%, 1200px);
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+#portfolio-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 40px;
+    margin-bottom: var(--gutter);
+}
+
+#portfolio-header > div:nth-of-type(2){
+    font-size: 2.2rem;
+}
+
+svg{
+    fill: white;
+    width: 7px;
+}
