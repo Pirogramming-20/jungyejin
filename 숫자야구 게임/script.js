@@ -24,8 +24,8 @@ function check_numbers() {
   input[0] = document.getElementById("number1").value;
   input[1] = document.getElementById("number2").value;
   input[2] = document.getElementById("number3").value;
-  console.log("인풋", input);
-  console.log("기회", lives);
+  // console.log("인풋", input);
+  // console.log("기회", lives);
   //숫자가 아니면 초기화
   for (let i = 0; i < 3; i++) {
     if (isNaN(input[i]) || input[i] == "") {
