@@ -18,7 +18,6 @@ let lives = 9;
 
 //제출시 숫자가 맞는지 체크
 function check_numbers() {
-  lives -= 1;
   let strike = 0;
   let ball = 0;
   const input = new Array();
@@ -29,7 +28,7 @@ function check_numbers() {
   console.log("기회", lives);
   //숫자가 아니면 초기화
   for (let i = 0; i < 3; i++) {
-    if (isNaN(input[i])) {
+    if (isNaN(input[i]) || input[i] == "") {
       document.getElementById("number1").value = "";
       document.getElementById("number2").value = "";
       document.getElementById("number3").value = "";
@@ -37,6 +36,7 @@ function check_numbers() {
     }
   }
   //sbo 알고리즘
+  lives -= 1;
   input.forEach((num, index) => {
     if (num == answer[index]) {
       strike += 1;
@@ -95,7 +95,20 @@ function display_input_result(strike, ball, input) {
   document.getElementById("number1").value = "";
   document.getElementById("number2").value = "";
   document.getElementById("number3").value = "";
+  if (strike == 3 || lives == 0) {
+    display_game_result(strike, ball);
+  }
 }
 
 //게임 결과 띄우기
-function display_game_result() {}
+function display_game_result(strike) {
+  let img = document.getElementById("game-result-img");
+  if (strike == 3) {
+    img.src = "success.png";
+  } else if (lives == 0) {
+    img.src = "fail.png";
+  }
+  //버튼 비활성화
+  const button = document.querySelector(".submit-button");
+  button.disabled = true;
+}
