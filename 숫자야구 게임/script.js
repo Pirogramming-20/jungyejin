@@ -21,9 +21,9 @@ function check_numbers() {
   let strike = 0;
   let ball = 0;
   const input = new Array();
-  input[0] = Number(document.getElementById("number1").value);
-  input[1] = Number(document.getElementById("number2").value);
-  input[2] = Number(document.getElementById("number3").value);
+  input[0] = document.getElementById("number1").value;
+  input[1] = document.getElementById("number2").value;
+  input[2] = document.getElementById("number3").value;
   console.log("인풋", input);
   console.log("기회", lives);
   //숫자가 아니면 초기화
@@ -35,6 +35,9 @@ function check_numbers() {
       return;
     }
   }
+  input[0] = Number(input[0]);
+  input[1] = Number(input[1]);
+  input[2] = Number(input[2]);
   //sbo 알고리즘
   lives -= 1;
   input.forEach((num, index) => {
@@ -96,7 +99,7 @@ function display_input_result(strike, ball, input) {
   document.getElementById("number2").value = "";
   document.getElementById("number3").value = "";
   if (strike == 3 || lives == 0) {
-    display_game_result(strike, ball);
+    display_game_result(strike);
   }
 }
 
