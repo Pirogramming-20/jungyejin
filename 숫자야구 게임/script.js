@@ -47,6 +47,7 @@ function check_numbers() {
   display_input_result(strike, ball, input);
 }
 
+//입력 결과 박스 보여주기
 function display_input_result(strike, ball, input) {
   const check_result_div = document.createElement("div");
   check_result_div.className = "check-result";
@@ -90,6 +91,11 @@ function display_input_result(strike, ball, input) {
   const parent_div = document.getElementsByClassName("result-display")[0];
   parent_div.appendChild(check_result_div);
   parent_div.scrollTop = parent_div.scrollHeight;
+
+  document.getElementById("number1").value = "";
+  document.getElementById("number2").value = "";
+  document.getElementById("number3").value = "";
 }
 
+//게임 결과 띄우기
 function display_game_result() {}
