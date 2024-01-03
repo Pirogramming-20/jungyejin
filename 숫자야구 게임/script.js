@@ -32,6 +32,7 @@ function check_numbers() {
       return;
     }
   }
+  //sbo 알고리즘
   input.forEach((num, index) => {
     if (num == answer[index]) {
       strike += 1;
@@ -39,9 +40,51 @@ function check_numbers() {
       ball += 1;
     }
   });
-  console.log("s", strike, "b", ball);
+  display_input_result(strike, ball, input);
 }
 
-function display_input_result() {}
+function display_input_result(strike, ball, input) {
+  const check_result_div = document.createElement("div");
+  check_result_div.className = "check-result";
+
+  const left_div = document.createElement("div");
+  left_div.className = "left";
+  left_div.textContent = input.join(" ");
+
+  const colon_text = document.createTextNode(":");
+
+  const right_div = document.createElement("div");
+  right_div.className = "right";
+
+  if (strike == 0 && ball == 0) {
+    const out_result = document.createElement("div");
+    out_result.className = "out num-result";
+    out_result.textContent = "O";
+    right_div.appendChild(out_result);
+  } else {
+    const strike_count = document.createTextNode(` ${strike} `);
+
+    const strike_result = document.createElement("div");
+    strike_result.className = "strike num-result";
+    strike_result.textContent = "S";
+
+    const ball_count = document.createTextNode(` ${ball} `);
+
+    const ball_result = document.createElement("div");
+    ball_result.className = "ball num-result";
+    ball_result.textContent = "B";
+
+    right_div.appendChild(strike_count);
+    right_div.appendChild(strike_result);
+    right_div.appendChild(ball_count);
+    right_div.appendChild(ball_result);
+  }
+  check_result_div.appendChild(left_div);
+  check_result_div.appendChild(colon_text);
+  check_result_div.appendChild(right_div);
+
+  const parent_div = document.getElementsByClassName("result-display")[0];
+  parent_div.appendChild(check_result_div);
+}
 
 function display_game_result() {}
