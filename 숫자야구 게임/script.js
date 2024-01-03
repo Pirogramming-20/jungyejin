@@ -1,8 +1,12 @@
-//정답 생성
+//정답 생성(중복x)
 function create_answer() {
   let answer = new Array();
   for (let i = 0; i < 3; i++) {
-    answer[i] = Math.floor(Math.random() * 10);
+    let randomNumber;
+    do {
+      randomNumber = Math.floor(Math.random() * 10);
+    } while (answer.includes(randomNumber));
+    answer[i] = randomNumber;
   }
   console.log("정답", answer);
   return answer;
@@ -85,6 +89,7 @@ function display_input_result(strike, ball, input) {
 
   const parent_div = document.getElementsByClassName("result-display")[0];
   parent_div.appendChild(check_result_div);
+  parent_div.scrollTop = parent_div.scrollHeight;
 }
 
 function display_game_result() {}
