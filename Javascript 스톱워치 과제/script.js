@@ -97,12 +97,10 @@ del.addEventListener("click", () => {
 //헤더의 check를 누르면 모두 체크
 const checkAll = document.getElementById("customCheckbox-header");
 checkAll.addEventListener("click", () => {
-  const Checkboxes = document.querySelectorAll(".custom-checkbox");
+  const checkboxes = document.querySelectorAll(".custom-checkbox");
 
-  Checkboxes.forEach((checkbox) => {
-    checkbox.checked = !checkbox.checked;
-    checkbox.classList.toggle("checked", checkbox.checked);
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = checkAll.checked;
+    checkbox.classList.toggle("checked", checkAll.checked);
   });
-  checkAll.checked = !checkAll.checked;
-  checkAll.classList.toggle("checked", checkAll.checked);
 });
