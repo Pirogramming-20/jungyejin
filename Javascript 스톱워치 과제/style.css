@@ -75,7 +75,7 @@
   width: 60rem;
   padding: 0 1rem;
 }
-#record > #record-header {
+#record-header {
   background-color: #b5bfb6;
   width: 100%;
   display: flex;
@@ -86,6 +86,10 @@
   padding: 1rem 5rem;
   border-radius: 30px 30px 0px 0px;
 }
+#record-header > i:hover {
+  color: red;
+  cursor: pointer;
+}
 .custom-checkbox {
   width: 2.5rem;
   height: 2.5rem;
@@ -94,6 +98,7 @@
   outline: none;
   border: 3px solid #333;
   background-color: transparent;
+  cursor: pointer;
 }
 
 #record-list {
