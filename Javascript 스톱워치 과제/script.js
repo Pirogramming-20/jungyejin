@@ -11,7 +11,7 @@ const startBtn = document.getElementById("start");
 startBtn.addEventListener("click", () => {
   if (!running_mode) {
     running_mode = true;
-    start_time = Date.now() - stop_time;
+    start_time = Date.now();
     update();
     update_interval = setInterval(update, 10);
   }
@@ -74,7 +74,7 @@ function addRecord(time) {
   recordList.appendChild(li);
 
   checkbox.addEventListener("click", (event) => {
-    console.log("클릭");
+    // console.log("클릭");
     event.target.classList.toggle("checked");
   });
 }
