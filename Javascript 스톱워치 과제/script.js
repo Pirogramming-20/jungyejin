@@ -72,4 +72,37 @@ function addRecord(time) {
   li.appendChild(div);
 
   recordList.appendChild(li);
+
+  checkbox.addEventListener("click", (event) => {
+    console.log("클릭");
+    event.target.classList.toggle("checked");
+  });
 }
+
+//del아이콘 누르면 없어지는 함수(개별)
+const del = document.getElementById("del");
+
+del.addEventListener("click", () => {
+  const recordList = document.getElementById("record-list");
+  const Checkboxes = recordList.querySelectorAll(".custom-checkbox.checked");
+
+  Checkboxes.forEach((checkbox) => {
+    const parentLi = checkbox.closest("li");
+    if (parentLi) {
+      recordList.removeChild(parentLi);
+    }
+  });
+});
+
+//헤더의 check를 누르면 모두 체크
+const checkAll = document.getElementById("customCheckbox-header");
+checkAll.addEventListener("click", () => {
+  const Checkboxes = document.querySelectorAll(".custom-checkbox");
+
+  Checkboxes.forEach((checkbox) => {
+    checkbox.checked = !checkbox.checked;
+    checkbox.classList.toggle("checked", checkbox.checked);
+  });
+  checkAll.checked = !checkAll.checked;
+  checkAll.classList.toggle("checked", checkAll.checked);
+});

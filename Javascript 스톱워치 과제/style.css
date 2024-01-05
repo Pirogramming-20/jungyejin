@@ -119,3 +119,7 @@
   padding: 1rem 5rem;
   width: 100%;
 }
+.checked {
+  background-image: url(./arrow-down.png);
+  background-size: cover;
+}
