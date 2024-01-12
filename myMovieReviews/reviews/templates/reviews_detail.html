@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리뷰 상세</title>
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/reviews_detail.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <div>myMoviereviews</div>
+      </a>
+      <a href="write"><button>Add a New review</button></a>
+    </header>
+    <div id="title-container">
+      <h1>{{ review.title }}</h1>
+      <div>
+        <a href="">수정</a>
+        <a href="">삭제</a>
+      </div>
+    </div>
+    <main>
+      <div id="detail">
+        <div id="image"></div>
+        <div id="info">
+          <div id="year"><strong>개봉년도 </strong>{{review.year}}</div>
+          <div id="director"><strong>감독 </strong>{{review.director}}</div>
+          <div id="actor"><strong>주연 </strong>{{review.actor}}</div>
+          <div id="genre"><strong>장르 </strong>{{review.genre}}</div>
+          <div id="star"><strong>별점 </strong>{{review.star_rating}}</div>
+          <div id="time"><strong>러닝타임 </strong>{{review.running_time}}</div>
+        </div>
+      </div>
+      <div id="comment">{{review.comment}}</div>
+    </main>
+  </body>
+</html>

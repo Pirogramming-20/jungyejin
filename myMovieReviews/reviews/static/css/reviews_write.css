@@ -1,0 +1,14 @@
+body {
+  margin: 2rem 5rem;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid gainsboro;
+}

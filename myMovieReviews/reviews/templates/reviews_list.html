@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예진피디아</title>
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/reviews_list.css" />
+  </head>
+  <body>
+    <header>
+      <div>myMoviereviews</div>
+      <a href="write"><button>Add a New review</button></a>
+    </header>
+    <main>
+      {%for review in reviews %}
+      <div class="review">
+        <div class="image"></div>
+        <a href="{{review.id}}">
+          <div class="title">{{review.title}}</div>
+        </a>
+        <div class="detail">
+          <div class="year"><strong>개봉년도 </strong>{{review.year}}</div>
+          <div class="genre"><strong>장르 </strong>{{review.genre}}</div>
+          <div class="star"><strong>별점 </strong>{{review.star_rating}}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </main>
+  </body>
+</html>
