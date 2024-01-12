@@ -30,7 +30,23 @@ def reviews_write(request):
         return redirect("/")
     return render(request,"reviews_write.html")
 
-# def reviews_update(request,pk):
-
+def reviews_update(request,pk):
+    review_=review.objects.get(id=pk)
+    if request.method=="POST":
+        review_.title=request.POST["title"]
+        review_.year=request.POST["year"]
+        review_.genre=request.POST["genre"]
+        review_.star_rating=request.POST["star"]
+        review_.running_time=request.POST["time"]
+        review_.comment=request.POST["comment"]
+        review_.director=request.POST["director"]
+        review_.actor=request.POST["actor"]
+        review_.save()
+        return redirect(f"/{pk}")
+    
+    context={
+        "review":review_
+    }
+    return render(request, 'reviews_update.html',context)
 
 # def reviews_delete(request,pk):

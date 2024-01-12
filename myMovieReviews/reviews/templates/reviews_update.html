@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리뷰 수정하기</title>
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/reviews_write.css" />
+  </head>
+  <body>
+    <header>
+      <div>myMoviereviews</div>
+      <a href="write"><button>Add a New review</button></a>
+    </header>
+    <main>
+      <div id="main-header">Movie Review🍿</div>
+      <form action="" method="post">
+        {% csrf_token %}
+        <label for="title">제목:</label>
+        <input name="title" id="title" value="{{review.title}}" /> <br />
+        <br />
+        <label for="year">개봉년도:</label>
+        <input
+          name="year"
+          id="year"
+          placeholder="4자리수 입력"
+          value="{{review.year}}"
+        />
+        <br />
+        <br />
+        <label for="genre">장르:</label>
+        <input name="genre" id="genre" value="{{review.genre}}" /> <br />
+        <br />
+        <label for="star">별점:</label>
+        <input name="star" id="star" value="{{review.star_rating}}" /> <br />
+        <br />
+        <label for="time">러닝타임:</label>
+        <input
+          name="time"
+          id="time"
+          placeholder="분단위 입력"
+          value="{{review.running_time}}"
+        />
+        <br />
+        <br />
+        <label for="comment">리뷰:</label><br />
+        <textarea id="comment" name="comment" cols="50" rows="10">
+{{review.comment}}</textarea
+        >
+        <br /><br />
+        <label for="director">감독:</label>
+        <input name="director" id="director" value="{{review.director}}" />
+        <br />
+        <br />
+        <label for="actor">배우:</label>
+        <input name="actor" id="actor" value="{{review.actor}}" /> <br />
+        <br />
+        <div>
+          <input type="submit" value="작성완료" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
