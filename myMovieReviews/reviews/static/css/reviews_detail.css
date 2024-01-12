@@ -23,13 +23,25 @@ header > a {
   justify-content: space-between;
   margin-bottom: 2rem;
 }
+#title-container input {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: gray;
+}
+#title-container > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 h1 {
   font-weight: bold;
   font-size: 2rem;
 }
 
 #title-container a {
-  font-weight: 0.5rem;
+  font-size: 1rem;
   color: gray;
   text-decoration: none;
 }

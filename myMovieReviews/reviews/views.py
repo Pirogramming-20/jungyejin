@@ -49,4 +49,8 @@ def reviews_update(request,pk):
     }
     return render(request, 'reviews_update.html',context)
 
-# def reviews_delete(request,pk):
+def reviews_delete(request,pk):
+    if request.method=="POST":
+        review_=review.objects.get(id=pk)
+        review_.delete()
+    return redirect("/")
