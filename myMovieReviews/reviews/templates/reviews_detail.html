@@ -28,12 +28,14 @@
       <div id="detail">
         <div id="image"></div>
         <div id="info">
-          <div id="year"><strong>개봉년도 </strong>{{review.year}}</div>
+          <div id="year"><strong>개봉년도 </strong>{{review.year}}년</div>
           <div id="director"><strong>감독 </strong>{{review.director}}</div>
           <div id="actor"><strong>주연 </strong>{{review.actor}}</div>
           <div id="genre"><strong>장르 </strong>{{review.genre}}</div>
           <div id="star"><strong>별점 </strong>{{review.star_rating}}</div>
-          <div id="time"><strong>러닝타임 </strong>{{review.running_time}}</div>
+          <div id="time">
+            <strong>러닝타임 </strong>{{review.running_time}}분
+          </div>
         </div>
       </div>
       <div id="comment">{{review.comment}}</div>
