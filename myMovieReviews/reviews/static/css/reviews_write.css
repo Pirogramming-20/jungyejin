@@ -12,3 +12,36 @@ header {
   font-weight: bold;
   border-bottom: 1px solid gainsboro;
 }
+
+main {
+  background-color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 5rem;
+  width: auto;
+}
+
+#main-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  width: 20rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 1rem;
+}
+
+#year,
+#genre,
+#star,
+#time {
+  width: 5rem;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  border: 1px solid gray;
+}

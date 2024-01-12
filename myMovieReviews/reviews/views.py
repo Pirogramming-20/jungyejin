@@ -16,11 +16,18 @@ def reviews_detail(request,pk):
     return render(request, 'reviews_detail.html',context)
 
 def reviews_write(request):
-    # if request.method=="POST":
-    #     review.objects.create(
-    #         # title:
-    #     )
-    #     return redirect("")
+    if request.method=="POST":
+        review.objects.create(
+            title=request.POST["title"],
+            year=request.POST["year"],
+            genre=request.POST["genre"],
+            star_rating=request.POST["star"],
+            running_time=request.POST["time"],
+            comment=request.POST["comment"],
+            director=request.POST["director"],
+            actor=request.POST["actor"],
+        )
+        return redirect("/")
     return render(request,"reviews_write.html")
 
 # def reviews_update(request,pk):

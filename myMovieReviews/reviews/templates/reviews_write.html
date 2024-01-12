@@ -12,19 +12,38 @@
       <div>myMoviereviews</div>
       <a href="write"><button>Add a New review</button></a>
     </header>
-    <form action="write" method="post">
-      {% csrf_token %}
-      <input name="title" placeholder="제목" /> <br />
-      <input name="user" placeholder="작성자" /> <br />
-      <textarea
-        name="content"
-        cols="30"
-        rows="10"
-        placeholder="내용"
-      ></textarea>
-      <div>
-        <input type="submit" value="작성완료" />
-      </div>
-    </form>
+    <main>
+      <div id="main-header">Movie Review🍿</div>
+      <form action="write" method="post">
+        {% csrf_token %}
+        <label for="title">제목:</label>
+        <input name="title" id="title" /> <br />
+        <br />
+        <label for="year">개봉년도:</label>
+        <input name="year" id="year" placeholder="4자리수 입력" /> <br />
+        <br />
+        <label for="genre">장르:</label>
+        <input name="genre" id="genre" /> <br />
+        <br />
+        <label for="star">별점:</label>
+        <input name="star" id="star" /> <br />
+        <br />
+        <label for="time">러닝타임:</label>
+        <input name="time" id="time" placeholder="분단위 입력" /> <br />
+        <br />
+        <label for="comment">리뷰:</label><br />
+        <textarea id="comment" name="comment" cols="50" rows="10"></textarea>
+        <br /><br />
+        <label for="director">감독:</label>
+        <input name="director" id="director" /> <br />
+        <br />
+        <label for="actor">배우:</label>
+        <input name="actor" id="actor" /> <br />
+        <br />
+        <div>
+          <input type="submit" value="작성완료" />
+        </div>
+      </form>
+    </main>
   </body>
 </html>
