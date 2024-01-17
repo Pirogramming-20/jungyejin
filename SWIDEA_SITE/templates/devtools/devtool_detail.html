@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {%block head%}
+<title>툴 추가</title>
+{%endblock%} {%block content%}
+
+<h2>{{devtool.name}}</h2>
+<p>종류: {{devtool.kind}}</p>
+<p>개발툴 설명: {{devtool.content}}</p>
+{% if ideas %}
+<p>만들 수 있는 아이디어 목록</p>
+  {% for idea in ideas %}
+    <a href={% url 'ideas:detail' pk=idea.id%}>- {{idea.title}}</a>
+    <br>
+  {% endfor %}
+{%endif%}
+
+<form action="{% url 'devtools:delete' devtool.pk %}" method="POST">
+  {%csrf_token%}
+  <a href="{% url 'devtools:update' devtool.pk %}" class="btn">수정하기</a>
+  <button type="submit" id="submit-btn" class="btn">삭제하기</button>
+  <a href="{% url 'devtools:list' %}" class="btn">목록</a>
+</form>
+{%endblock%}

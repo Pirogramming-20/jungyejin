@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {%block head%}
+<link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+<script defer src="../../static/ideas/script.js"></script>
+
+<title>아이디어 리스트</title>
+{%endblock%} {%block content%}
+
+<div id="info">
+  <p>Idea List</p>
+</div>
+<div id="list">
+  {% for idea in ideas %}
+  <div class="idea">
+    <div class="image">
+      {% if idea.image.url != null and idea.image.url != '' %}
+      <img src="{{ idea.image.url }}" alt="대체텍스트" />
+      {% else %}
+      <img src="../../static/ideas/no_img.png" alt="대체텍스트" />
+      {% endif %} {% if idea.mark %}
+      <i class="ri-star-fill" onclick="changeMark(this)"></i>
+      {% else %}
+      <i class="ri-star-line" onclick="changeMark(this)"></i>
+      {% endif %}
+    </div>
+    <a href="{% url 'ideas:detail' idea.pk %}">
+      <div class="title">{{idea.title}}</div>
+    </a>
+    <div class="tool">{{idea.devtool}}</div>
+    <div class="interest">{{idea.interest}}</div>
+  </div>
+  {% endfor %}
+</div>
+{%endblock%}

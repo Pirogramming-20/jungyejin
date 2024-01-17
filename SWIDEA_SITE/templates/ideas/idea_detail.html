@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% load static %} {%block head%}
+<title>아이디어</title>
+<link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+{%endblock%} {%block content%}
+<div>
+  <img src="../../static/ideas/no_img.png" />
+  <div id="detail"></div>
+  <div id="title-container">
+    <p>{{idea.title}}</p>
+    {% if idea.mark %}
+    <i class="ri-star-fill"></i>
+    {% else %}
+    <i class="ri-star-line"></i>
+    {% endif %}
+  </div>
+  <p>아이디어 관심도: {{idea.interest}}</p>
+  <a href="{% url 'devtools:detail' pk=idea.devtool.id %}">
+    <p>개발툴: {{idea.devtool}}</p>
+  </a>
+  <p>아이디어 설명: {{idea.content}}</p>
+</div>
+<form action="{% url 'ideas:delete' idea.pk %}" method="POST">
+  {%csrf_token%}
+  <a href="{% url 'ideas:update' idea.pk %}" class="btn">수정하기</a>
+  <button type="submit" id="submit-btn" class="btn">삭제하기</button>
+  <a href="{% url 'ideas:list' %}" class="btn">목록</a>
+</form>
+{%endblock%}

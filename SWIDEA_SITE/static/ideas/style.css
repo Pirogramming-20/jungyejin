@@ -1,0 +1,77 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 10rem;
+}
+main {
+  margin: 3rem 10rem;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#list {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+#tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 8rem;
+  height: 6rem;
+}
+.image {
+  position: relative;
+  display: inline-block;
+}
+.image i {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+#create {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#title-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.devtool {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+
+.devtool > div,
+.devtool > a {
+  width: 33.3%;
+}
+form {
+  margin-top: 5rem;
+}
+
+.btn {
+  background-color: grey;
+  border-radius: 10%;
+  padding: 1rem 1rem;
+  border: none;
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+#submit-btn {
+  text-wrap: nowrap;
+}
