@@ -1,13 +1,24 @@
 from django.shortcuts import render,redirect
+from django.http import JsonResponse
 from .forms import IdeaForm
 from .models import Idea
 
 # Create your views here.
 
 def idea_list(request):
-    ideas=Idea.objects.all()
-    ctx={'ideas':ideas}
-    return render(request,'ideas/idea_list.html',ctx)
+     sort_option = request.GET.get('sort_option', '')
+
+     if sort_option:
+        if sort_option == 'name':
+            ideas = Idea.objects.order_by('title')
+        elif sort_option == 'interest':
+            ideas = Idea.objects.order_by('interest')
+        else:
+            ideas = Idea.objects.all()
+     else:
+        ideas = Idea.objects.all()
+     ctx={'ideas':ideas}
+     return render(request,'ideas/idea_list.html',ctx)
 
 def create(request):
     if request.method=='GET':

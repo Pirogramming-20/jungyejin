@@ -10,6 +10,12 @@
 
 <div id="info">
   <p>Idea List</p>
+  <select name="sort" id="sort">
+    <option value="" id="">------</option>
+    <option value="recently" id="recently">최신순(기본)</option>
+    <option value="interest" id="interest">관심도순</option>
+    <option value="name" id="name">이름순</option>
+  </select>
 </div>
 <div id="list">
   {% for idea in ideas %}
@@ -20,16 +26,28 @@
       {% else %}
       <img src="../../static/ideas/no_img.png" alt="대체텍스트" />
       {% endif %} {% if idea.mark %}
-      <i class="ri-star-fill" onclick="changeMark(this)"></i>
+      <i
+        class="ri-star-fill"
+        style="color: yellow"
+        onclick="changeMark(this)"
+      ></i>
       {% else %}
-      <i class="ri-star-line" onclick="changeMark(this)"></i>
+      <i
+        class="ri-star-line"
+        style="color: yellow"
+        onclick="changeMark(this)"
+      ></i>
       {% endif %}
     </div>
     <a href="{% url 'ideas:detail' idea.pk %}">
       <div class="title">{{idea.title}}</div>
     </a>
     <div class="tool">{{idea.devtool}}</div>
-    <div class="interest">{{idea.interest}}</div>
+    <div class="interest-container">
+      <p onclick="changeInterest(this,'{{idea.id}}',-1)"><</p>
+      <div class="interest">{{idea.interest}}</div>
+      <p onclick="changeInterest(this,'{{idea.id}}',1)">></p>
+    </div>
   </div>
   {% endfor %}
 </div>

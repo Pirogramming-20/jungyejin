@@ -11,7 +11,14 @@ a {
   text-decoration: none;
   color: black;
 }
-
+#info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#info select {
+  margin: 0.7rem 0;
+}
 #list {
   display: flex;
   flex-direction: row;
@@ -74,4 +81,9 @@ form {
 }
 #submit-btn {
   text-wrap: nowrap;
+}
+.interest-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
