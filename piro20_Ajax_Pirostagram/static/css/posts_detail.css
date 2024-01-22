@@ -1,0 +1,25 @@
+@import url(reset.css);
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.post-container {
+  margin-top: 5rem;
+  width: 20rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: 1rem;
+}
+img {
+  width: 15rem;
+  height: 22.5rem;
+}
+#comment-input {
+  width: 20rem;
+}

@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/posts_detail.css' %}" />
+    <title>Pirostagram</title>
+  </head>
+  <body>
+    <div class="post post-id-{{ post.id }}">
+      <div class="post-container">
+        <img src="http://placekitten.com/200/300" />
+        <p>{{post.title}}</p>
+        {% if post.like %}
+        <div class="post__like-btn" onclick="onClickLike('{{ post.id }}')">
+          ❤️
+        </div>
+        {% else %}
+        <div class="post__like-btn" onclick="onClickLike('{{ post.id }}')">
+          🤍
+        </div>
+        {% endif %}
+        <p>{{post.content}}</p>
+        <form action="{% url 'posts:delete' post.pk %}" method="POST">
+          {%csrf_token%}
+          <button type="submit">삭제하기</button>
+        </form>
+        <a href="{% url 'posts:list'%}"><button>목록보기</button></a>
+      </div>
+      <div class="comment-container">
+        {% for comment in comments %}
+        <div class="comment comment-{{comment.id}}">
+          {{comment.content}}
+          <div onclick="onClickDelete('{{ post.id }}', '{{ comment.id }}')">
+            삭제
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="comment-new">
+        <input
+          type="text"
+          id="comment-input"
+          placeholder="댓글을 작성하세요."
+        />
+        <button
+          onclick="onClickCreate('{{ post.id }}',document.getElementById('comment-input').value)"
+        >
+          작성
+        </button>
+      </div>
+    </div>
+    <script>
+      const requestLike = new XMLHttpRequest();
+
+      const onClickLike = (id) => {
+        const url = "/like_ajax/";
+        requestLike.open("POST", url, true);
+        requestLike.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        requestLike.send(JSON.stringify({ id: id }));
+      };
+
+      requestLike.onreadystatechange = () => {
+        if (requestLike.readyState === XMLHttpRequest.DONE) {
+          if (requestLike.status < 400) {
+            const { id, like } = JSON.parse(requestLike.responseText);
+            const element = document.querySelector(
+              `.post-id-${id} .post__like-btn`
+            );
+            const newLikeStatus = !like;
+
+            element.innerHTML = newLikeStatus ? "🤍" : "❤️";
+          }
+        }
+      };
+
+      const onClickCreate = (id, comment) => {
+        const requestClick = new XMLHttpRequest();
+        const url = "/comment/create/";
+        requestClick.open("POST", url, true);
+        requestClick.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        requestClick.send(JSON.stringify({ id: id, comment: comment }));
+
+        requestClick.onreadystatechange = () => {
+          if (requestClick.readyState === XMLHttpRequest.DONE) {
+            if (requestClick.status < 400) {
+              const { id, comment, comment_id } = JSON.parse(
+                requestClick.responseText
+              );
+              const element = document.querySelector(`.comment-container`);
+              element.innerHTML =
+                element.innerHTML +
+                `<div class='comment comment-${comment_id}'>${comment}<div
+                  onclick="onClickDelete('${id}', '${comment_id}')"
+                >
+                  삭제
+                </div></div>`;
+            }
+          }
+        };
+      };
+
+      const onClickDelete = (post_id, comment_id) => {
+        const requestClick = new XMLHttpRequest();
+        const url = `/comment/delete/${post_id}/`;
+        requestClick.open("POST", url, true);
+        requestClick.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        requestClick.send(
+          JSON.stringify({ post_id: post_id, comment_id: comment_id })
+        );
+
+        requestClick.onreadystatechange = () => {
+          if (requestClick.readyState === XMLHttpRequest.DONE) {
+            if (requestClick.status < 400) {
+              const { post_id, comment_id } = JSON.parse(requestClick.response);
+              const element = document.querySelector(`.comment-${comment_id}`);
+              element.innerHTML = ``;
+            }
+          }
+        };
+      };
+    </script>
+  </body>
+</html>
